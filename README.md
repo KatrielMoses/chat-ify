@@ -10,7 +10,6 @@ A modern, full-stack real-time messaging application built with the MERN stack, 
 
 ## 👨‍💻 Author
 
-**Your Name**
 - GitHub: [@KatrielMoses](https://github.com/KatrielMoses)
 - LinkedIn: [Katriel Delzyn Moses](https://linkedin.com/in/katriel-moses/)
 - Email: katriel.moses@gmail.com
