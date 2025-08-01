@@ -4,7 +4,6 @@
 [![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com/)
 [![Socket.IO](https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101)](https://socket.io/)
 
-https://chat-ify.vercel.app/login
 
 A modern, full-stack real-time messaging application built with the MERN stack, featuring instant messaging, friend management, and a beautiful responsive UI with multiple theme options.
 
@@ -250,7 +249,7 @@ export const protectRoute = async (req, res, next) => {
 
 ## 🚀 Deployment
 
-This application is deployed on Render. You can access the live demo at [Chat-ify](https://chat-ify.vercel.app/login)
+This application is deployed on Render. You can access the live demo at [Chat-ify](https://chat-ify.vercel.app/)
 
 ### Deploy to Render
 
