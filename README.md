@@ -1,6 +1,4 @@
-<img width="1885" height="957" alt="image" src="https://github.com/user-attachments/assets/19beda7f-8442-471a-99cd-1f254c9a8505" /># 💬 Chat-ify - Real-Time Messaging Application
-
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-chat--ify.onrender.com-blue?style=for-the-badge)](https://chat-ify.vercel.app)
+[Live Demo](https://chat-ify.vercel.app/login)
 [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com/)
