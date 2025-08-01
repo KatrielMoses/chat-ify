@@ -1,6 +1,6 @@
 # 💬 Chat-ify - Real-Time Messaging Application
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-chat--ify.onrender.com-blue?style=for-the-badge)](https://chat-ify.onrender.com/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-chat--ify.onrender.com-blue?style=for-the-badge)](https://chat-ify.vercel.app/login)
 [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com/)
@@ -250,7 +250,7 @@ export const protectRoute = async (req, res, next) => {
 
 ## 🚀 Deployment
 
-This application is deployed on Render. You can access the live demo at [Chat-ify](https://chat-ify.onrender.com/)
+This application is deployed on Render. You can access the live demo at [Chat-ify](https://chat-ify.vercel.app/login)
 
 ### Deploy to Render
 
