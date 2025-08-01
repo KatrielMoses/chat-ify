@@ -1,10 +1,12 @@
-# 💬 Chat-ify - Real-Time Messaging Application
+<img width="1885" height="957" alt="image" src="https://github.com/user-attachments/assets/19beda7f-8442-471a-99cd-1f254c9a8505" /># 💬 Chat-ify - Real-Time Messaging Application
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-chat--ify.onrender.com-blue?style=for-the-badge)](https://chat-ify.vercel.app/login)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-chat--ify.onrender.com-blue?style=for-the-badge)](https://chat-ify.vercel.app)
 [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com/)
 [![Socket.IO](https://img.shields.io/badge/Socket.io-black?style=for-the-badge&logo=socket.io&badgeColor=010101)](https://socket.io/)
+
+https://chat-ify.vercel.app/login
 
 A modern, full-stack real-time messaging application built with the MERN stack, featuring instant messaging, friend management, and a beautiful responsive UI with multiple theme options.
 
