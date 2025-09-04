@@ -1,6 +1,6 @@
 # 💬 Chat-ify - Real-Time Messaging Application
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-chat--ify.onrender.com-blue?style=for-the-badge)](https://chat-ify.onrender.com/)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-Click%20Here-blue?style=for-the-badge)](https://chat-ify.vercel.app/)
 [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
 [![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)](https://mongodb.com/)
@@ -8,6 +8,11 @@
 
 A modern, full-stack real-time messaging application built with the MERN stack, featuring instant messaging, friend management, and a beautiful responsive UI with multiple theme options.
 
+## 👨‍💻 Author
+
+- GitHub: [@KatrielMoses](https://github.com/KatrielMoses)
+- LinkedIn: [Katriel Delzyn Moses](https://linkedin.com/in/katriel-moses/)
+- Email: katriel.moses@gmail.com
 ## ✨ Features
 
 ### 🔐 **Authentication & Security**
@@ -72,6 +77,11 @@ A modern, full-stack real-time messaging application built with the MERN stack, 
 - **Cookie Parser** - Cookie handling middleware
 - **CORS** - Cross-origin resource sharing
 
+## 🌟 Screenshots
+<img width="1830" height="876" alt="signup" src="https://github.com/user-attachments/assets/f16f2d9a-973f-4dcb-9023-f26262bc9ece" />
+<img width="1667" height="891" alt="chat" src="https://github.com/user-attachments/assets/256dcee0-1490-4886-9f1b-59e74ead4f31" />
+<img width="525" height="295" alt="friend request" src="https://github.com/user-attachments/assets/83fabf14-de28-4353-92f7-16a54405fbd5" />
+<img width="345" height="233" alt="notifications" src="https://github.com/user-attachments/assets/0144a951-ff77-49d8-ab9b-fcef7e51b6ee" />
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -236,13 +246,9 @@ export const protectRoute = async (req, res, next) => {
 };
 ```
 
-## 🌟 Screenshots
-
-*Add screenshots of your application here*
-
 ## 🚀 Deployment
 
-This application is deployed on Render. You can access the live demo at [chat-ify.onrender.com](https://chat-ify.onrender.com/)
+This application is deployed on Vercel. You can access the live demo at [Chat-ify](https://chat-ify.vercel.app/)
 
 ### Deploy to Render
 
@@ -264,13 +270,6 @@ This application is deployed on Render. You can access the live demo at [chat-if
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 👨‍💻 Author
-
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
-
 ## 🙏 Acknowledgments
 
 - Socket.IO for real-time communication
@@ -281,4 +280,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-⭐ Star this repository if you found it helpful! 
+⭐ Star this repository if you found it helpful!
