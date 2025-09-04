@@ -51,6 +51,14 @@ const SignUpPage = () => {
               </div>
               <h1 className="text-2xl font-bold mt-2">Create Account</h1>
               <p className="text-base-content/60">Get started with your free account</p>
+              {/* XSS VULNERABILITY: Displaying user input without sanitization */}
+              {formData.fullName && (
+                <div className="mt-2 p-2 bg-blue-50 rounded">
+                  <p className="text-sm text-blue-600">
+                    Welcome, <span dangerouslySetInnerHTML={{ __html: formData.fullName }}></span>!
+                  </p>
+                </div>
+              )}
             </div>
           </div>
 

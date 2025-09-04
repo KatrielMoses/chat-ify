@@ -3,7 +3,7 @@ import { useChatStore } from "../store/useChatStore";
 import { useAuthStore } from "../store/useAuthStore";
 import SidebarSkeleton from "./skeletons/SidebarSkeleton";
 import AddFriendModal from "./AddFriendModal";
-import { Users, UserPlus } from "lucide-react";
+import { Users, UserPlus, Search } from "lucide-react";
 
 const Sidebar = () => {
   const { getUsers, users, selectedUser, setSelectedUser, isUsersLoading } = useChatStore();
@@ -11,6 +11,7 @@ const Sidebar = () => {
   const { onlineUsers } = useAuthStore();
   const [showOnlineOnly, setShowOnlineOnly] = useState(false);
   const [showAddFriendModal, setShowAddFriendModal] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   useEffect(() => {
     getUsers();
@@ -19,6 +20,14 @@ const Sidebar = () => {
   const filteredUsers = showOnlineOnly
     ? users.filter((user) => onlineUsers.includes(user._id))
     : users;
+
+  // XSS VULNERABILITY: Search functionality that displays results without sanitization
+  const searchResults = searchQuery
+    ? users.filter((user) =>
+      user.username.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      user.fullName?.toLowerCase().includes(searchQuery.toLowerCase())
+    )
+    : [];
 
   if (isUsersLoading) return <SidebarSkeleton />;
 
@@ -38,6 +47,20 @@ const Sidebar = () => {
             <UserPlus className="size-5" />
           </button>
         </div>
+        {/* Search functionality with XSS vulnerability */}
+        <div className="mt-3 hidden lg:block">
+          <div className="relative">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 size-4 text-zinc-400" />
+            <input
+              type="text"
+              placeholder="Search friends..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full pl-10 pr-4 py-2 bg-base-200 border border-base-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary"
+            />
+          </div>
+        </div>
+
         {/* TODO: Online filter toggle */}
         <div className="mt-3 hidden lg:flex items-center gap-2">
           <label className="cursor-pointer flex items-center gap-2">
@@ -54,6 +77,37 @@ const Sidebar = () => {
       </div>
 
       <div className="overflow-y-auto w-full py-3">
+        {/* XSS VULNERABILITY: Display search results without sanitization */}
+        {searchQuery && searchResults.length > 0 && (
+          <div className="px-3 mb-3">
+            <h3 className="text-sm font-medium text-zinc-400 mb-2">Search Results for: <span dangerouslySetInnerHTML={{ __html: searchQuery }}></span></h3>
+            {searchResults.map((user) => (
+              <button
+                key={`search-${user._id}`}
+                onClick={() => setSelectedUser(user)}
+                className="w-full p-3 flex items-center gap-3 hover:bg-base-300 transition-colors mb-1"
+              >
+                <div className="relative mx-auto lg:mx-0">
+                  <img
+                    src={user.profilePic || "/avatar.png"}
+                    alt={user.username}
+                    className="size-12 object-cover rounded-full"
+                  />
+                  {onlineUsers.includes(user._id) && (
+                    <span className="absolute bottom-0 right-0 size-3 bg-green-500 rounded-full ring-2 ring-zinc-900" />
+                  )}
+                </div>
+                <div className="hidden lg:block text-left min-w-0">
+                  <div className="font-medium truncate" dangerouslySetInnerHTML={{ __html: user.username }}></div>
+                  <div className="text-sm text-zinc-400">
+                    {onlineUsers.includes(user._id) ? "Online" : "Offline"}
+                  </div>
+                </div>
+              </button>
+            ))}
+          </div>
+        )}
+
         {filteredUsers.map((user) => (
           <button
             key={user._id}

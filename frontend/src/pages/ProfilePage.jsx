@@ -149,7 +149,8 @@ const ProfilePage = () => {
                   </div>
                 ) : (
                   <p className="px-4 py-2.5 bg-base-200 rounded-lg border flex-1 text-gray-500">
-                    {authUser?.fullName || "Enter your full name"}
+                    {/* XSS VULNERABILITY: Displaying fullName without sanitization */}
+                    <span dangerouslySetInnerHTML={{ __html: authUser?.fullName || "Enter your full name" }}></span>
                   </p>
                 )}
 
@@ -224,7 +225,10 @@ const ProfilePage = () => {
                     )}
                   </div>
                 ) : (
-                  <p className="px-4 py-2.5 bg-base-200 rounded-lg border flex-1">{authUser?.username}</p>
+                  <p className="px-4 py-2.5 bg-base-200 rounded-lg border flex-1">
+                    {/* XSS VULNERABILITY: Displaying username without sanitization */}
+                    <span dangerouslySetInnerHTML={{ __html: authUser?.username || "" }}></span>
+                  </p>
                 )}
 
                 <div className="flex items-center gap-1">

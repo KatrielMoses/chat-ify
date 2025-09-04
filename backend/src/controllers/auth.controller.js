@@ -34,11 +34,12 @@ export const signup = async (req, res) => {
             generateToken(newUser._id, res)
             await newUser.save();
 
+            // XSS VULNERABILITY: Returning unsanitized user input
             res.status(201).json({
                 _id: newUser._id,
-                fullName: newUser.fullName,
+                fullName: newUser.fullName, // This could contain XSS payload
                 email: newUser.email,
-                username: newUser.username,
+                username: newUser.username, // This could contain XSS payload
                 profilePic: newUser.profilePic,
                 createdAt: newUser.createdAt,
             })
@@ -67,11 +68,12 @@ export const login = async (req, res) => {
         }
 
         generateToken(user._id, res);
+        // XSS VULNERABILITY: Returning unsanitized user data
         res.status(200).json({
             _id: user._id,
-            fullName: user.fullName,
+            fullName: user.fullName, // This could contain XSS payload
             email: user.email,
-            username: user.username,
+            username: user.username, // This could contain XSS payload
             profilePic: user.profilePic,
             createdAt: user.createdAt,
         })

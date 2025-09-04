@@ -7,6 +7,7 @@ import { Eye, EyeOff, Loader2, Lock, Mail, MessageSquare } from "lucide-react";
 
 const LoginPage = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -15,7 +16,14 @@ const LoginPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    login(formData);
+    // XSS VULNERABILITY: Simulating error message from URL parameter
+    const urlParams = new URLSearchParams(window.location.search);
+    const error = urlParams.get('error');
+    if (error) {
+      setErrorMessage(error);
+    } else {
+      login(formData);
+    }
   };
 
   return (
@@ -36,6 +44,13 @@ const LoginPage = () => {
               <p className="text-base-content/60">Sign in to your account</p>
             </div>
           </div>
+
+          {/* XSS VULNERABILITY: Displaying error message without sanitization */}
+          {errorMessage && (
+            <div className="alert alert-error">
+              <span dangerouslySetInnerHTML={{ __html: errorMessage }}></span>
+            </div>
+          )}
 
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -116,7 +131,7 @@ const LoginPage = () => {
       />
     </div>
   );
-  
+
 }
 
 export default LoginPage

@@ -1,14 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import { useAuthStore } from '../store/useAuthStore';
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { LogOut, MessageSquare, Settings, User, Bell } from "lucide-react";
 import NotificationPanel from './NotificationPanel';
 
+
+const TEST_CREDENTIALS = [
+  { username: 'tester', password: 'tester' },
+  { username: 'user', password: 'user12' }
+];
+
 const Navbar = () => {
+
+  const location   = useLocation();
+  const isAuthPage = ["/login", "/signup"].includes(location.pathname);
 
   const { authUser, logout, getFriendRequests } = useAuthStore();
   const [showNotifications, setShowNotifications] = useState(false);
   const [notificationCount, setNotificationCount] = useState(0);
+  const [showTestCreds, setShowTestCreds] = useState(false);
 
   useEffect(() => {
     if (authUser) {
@@ -79,6 +89,15 @@ const Navbar = () => {
               <Settings className="w-4 h-4" />
               <span className="hidden sm:inline">Settings</span>
             </Link>
+{/* 
+            {!authUser && isAuthPage && (
+            <button
+              onClick={() => setShowTestCreds(true)}
+              className="btn btn-sm bg-secondary text-secondary-content"
+            >
+              Test Credentials
+            </button>
+            )} */}
 
             {authUser && (
               <>
